@@ -1,0 +1,127 @@
+<div class="tabs-panels tabs-panels-noborder" style="height: 303px; width: 1164px;"><div class="panel" style="display: block; width: 1164px;"><div title="" href="home/welcome" class="panel-body panel-body-noheader panel-body-noborder panel-noscroll" style="width: 1164px; height: 303px;">
+
+
+
+
+    <div id="ly" class="easyui-layout layout" fit="true" border="false" style="width: 1164px; height: 303px;">
+        <div class="panel layout-panel layout-panel-center" style="left: 0px; top: 0px; width: 1164px;"><div class="panel-header panel-header-noborder" style="width: 1154px;"><div class="panel-title panel-with-icon">数据列表（未过期、未进入近效期之前已经销售完的药品）</div><div class="panel-icon wy-icon-table"></div><div class="panel-tool"><a class="panel-tool-collapse" href="javascript:void(0)" style="display: none;"></a></div></div><div region="center" title="" iconcls="wy-icon-table" border="false" class="panel-body panel-body-noborder layout-body" style="width: 1164px; height: 276px;">
+            <div class="wy-centerbox">
+                <!-- 列表开始 -->
+                <div class="panel datagrid" style="width: auto;"><div class="datagrid-wrap panel-body panel-body-noheader" title="" style="width: 1160px; height: auto;"><div id="toolbar" class="datagrid-toolbar">
+                    <a href="javascript:void(0)" class="easyui-linkbutton l-btn l-btn-small" iconcls="icon-remove" onclick="destroyItems('maintain/drugstorage/deleteitems')" group="" id=""><span class="l-btn-left l-btn-icon-left"><span class="l-btn-text">删除库存记录</span><span class="l-btn-icon icon-remove">&nbsp;</span></span></a>
+                </div><div class="datagrid-view" style="width: 1160px; height: 50px;"><div class="datagrid-view1" style="width: 128px;"><div class="datagrid-header" style="width: 128px; height: 49px;"><div class="datagrid-header-inner" style="display: block;"><table class="datagrid-htable" border="0" cellspacing="0" cellpadding="0" style="height: 50px;"><tbody><tr class="datagrid-header-row"><td rowspan="1"><div class="datagrid-header-rownumber"></div></td><td rowspan="2" field="id"><div class="datagrid-header-check"><input type="checkbox"></div></td><td rowspan="2" field="edit"><div class="datagrid-cell datagrid-cell-c26-edit" style="text-align: center;"><span>操作</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td rowspan="2" field="isOutOfPeriod"><div class="datagrid-cell datagrid-cell-c26-isOutOfPeriod" style="text-align: center;"><span>状态</span><span class="datagrid-sort-icon">&nbsp;</span></div></td></tr></tbody></table></div></div><div class="datagrid-body" style="width: 128px; height: 0px;"><div class="datagrid-body-inner"><table class="datagrid-btable" cellspacing="0" cellpadding="0" border="0" style="table-layout: auto;"><tbody></tbody></table></div></div><div class="datagrid-footer" style="width: 128px;"><div class="datagrid-footer-inner" style="display: none;"></div></div></div><div class="datagrid-view2" style="width: 1032px;"><div class="datagrid-header" style="width: 1032px; height: 49px;"><div class="datagrid-header-inner" style="display: block;"><table class="datagrid-htable" border="0" cellspacing="0" cellpadding="0" style="height: 50px;"><tbody><tr class="datagrid-header-row"><td colspan="7"><div class="datagrid-cell-group">库存信息</div></td><td colspan="14"><div class="datagrid-cell-group">药品信息</div></td></tr><tr class="datagrid-header-row"><td field="lotnumber"><div class="datagrid-cell datagrid-cell-c26-lotnumber" style="text-align: center;"><span>批号</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="countSplitSpecificationsString"><div class="datagrid-cell datagrid-cell-c26-countSplitSpecificationsString" style="text-align: center;"><span>可用库存</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="countLockSplitSpecificationsString"><div class="datagrid-cell datagrid-cell-c26-countLockSplitSpecificationsString" style="text-align: center;"><span>锁定库存</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="priceString"><div class="datagrid-cell datagrid-cell-c26-priceString" style="text-align: center;"><span>进价(元)</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="retailPriceString"><div class="datagrid-cell datagrid-cell-c26-retailPriceString" style="text-align: center;"><span>零售价(元)</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="pruduceDate"><div class="datagrid-cell datagrid-cell-c26-pruduceDate" style="text-align: center;"><span>生产日期</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="periodOfValidity"><div class="datagrid-cell datagrid-cell-c26-periodOfValidity" style="text-align: center;"><span>有效期至</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="genericName"><div class="datagrid-cell datagrid-cell-c26-genericName" style="text-align: center;"><span>通用名称</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="searchKey"><div class="datagrid-cell datagrid-cell-c26-searchKey" style="text-align: center;"><span>查询关键字</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="productName"><div class="datagrid-cell datagrid-cell-c26-productName" style="text-align: center;"><span>商品名称</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="dosageForm"><div class="datagrid-cell datagrid-cell-c26-dosageForm" style="text-align: center;"><span>剂型</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="specification"><div class="datagrid-cell datagrid-cell-c26-specification" style="text-align: center;"><span>规格</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="manufacturer"><div class="datagrid-cell datagrid-cell-c26-manufacturer" style="text-align: center;"><span>生产厂商</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="vendor"><div class="datagrid-cell datagrid-cell-c26-vendor" style="text-align: center;"><span>供货单位</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="approvalNumber"><div class="datagrid-cell datagrid-cell-c26-approvalNumber" style="text-align: center;"><span>批准文号</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="drugRang"><div class="datagrid-cell datagrid-cell-c26-drugRang" style="text-align: center;"><span>药品范围</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="storageCondition"><div class="datagrid-cell datagrid-cell-c26-storageCondition" style="text-align: center;"><span>储存条件</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="drugCategory"><div class="datagrid-cell datagrid-cell-c26-drugCategory" style="text-align: center;"><span>药品类别</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="openStockString"><div class="datagrid-cell datagrid-cell-c26-openStockString" style="text-align: center;"><span>是否拆零(拆零规格)</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="controlledDrugString"><div class="datagrid-cell datagrid-cell-c26-controlledDrugString" style="text-align: center;"><span>管制药品(管制类别|管制数量)</span><span class="datagrid-sort-icon">&nbsp;</span></div></td><td field="chineseMedicineArea"><div class="datagrid-cell datagrid-cell-c26-chineseMedicineArea" style="text-align: center;"><span>中药饮片产地</span><span class="datagrid-sort-icon">&nbsp;</span></div></td></tr></tbody></table></div></div><div class="datagrid-body" style="width: 1032px; height: 0px;"><table class="datagrid-btable" cellspacing="0" cellpadding="0" border="0" style="table-layout: auto;"><tbody></tbody></table></div><div class="datagrid-footer" style="width: 1032px;"><div class="datagrid-footer-inner" style="display: none;"></div></div></div><table id="dg" url="maintain/drugstorage/zero/listjson" style="display: none;">
+                    <thead data-options="frozen:true">
+                    <tr>
+                        <th data-options="field:'id',checkbox:true" rowspan="2"></th>
+                        <th field="edit" formatter="rowformater" halign="center" align="center" rowspan="2">操作</th>
+                        <th field="isOutOfPeriod" formatter="isOutOfPeriodRowformater" halign="center" align="center" rowspan="2">状态</th>
+
+                    </tr>
+                    </thead>
+                    <thead>
+                    <tr>
+                        <th colspan="7">库存信息</th>
+                        <th colspan="14">药品信息</th>
+                    </tr>
+                    <tr>
+                        <!-- 库存信息 -->
+                        <th field="lotnumber" halign="center">批号</th>
+                        <th field="countSplitSpecificationsString" halign="center" align="right">可用库存</th>
+                        <th field="countLockSplitSpecificationsString" halign="center" align="right">锁定库存</th>
+                        <th field="priceString" halign="center" align="right">进价(元)</th>
+                        <th field="retailPriceString" halign="center" align="right" editor="{type:'numberbox',options:{precision:2}}">零售价(元)</th>
+                        <th field="pruduceDate" halign="center">生产日期</th>
+                        <th field="periodOfValidity" halign="center">有效期至</th>
+
+                        <!-- 药品信息 -->
+                        <th field="genericName" halign="center">通用名称</th>
+                        <th field="searchKey" halign="center">查询关键字</th>
+                        <th field="productName" halign="center">商品名称</th>
+                        <th field="dosageForm" halign="center">剂型</th>
+                        <th field="specification" halign="center">规格</th>
+                        <th field="manufacturer" halign="center">生产厂商</th>
+                        <th field="vendor" halign="center">供货单位</th>
+                        <th field="approvalNumber" halign="center">批准文号</th>
+                        <th field="drugRang" halign="center">药品范围</th>
+                        <th field="storageCondition" halign="center">储存条件</th>
+                        <th field="drugCategory" halign="center">药品类别</th>
+                        <th field="openStockString" halign="center">是否拆零(拆零规格)</th>
+                        <th field="controlledDrugString" halign="center">管制药品(管制类别|管制数量)</th>
+                        <th field="chineseMedicineArea" halign="center">中药饮片产地</th>
+                    </tr>
+                    </thead>
+                </table><style type="text/css" easyui="true">
+                    .datagrid-cell-c26-edit{width:auto}
+                    .datagrid-cell-c26-isOutOfPeriod{width:auto}
+                    .datagrid-cell-c26-lotnumber{width:auto}
+                    .datagrid-cell-c26-countSplitSpecificationsString{width:auto}
+                    .datagrid-cell-c26-countLockSplitSpecificationsString{width:auto}
+                    .datagrid-cell-c26-priceString{width:auto}
+                    .datagrid-cell-c26-retailPriceString{width:auto}
+                    .datagrid-cell-c26-pruduceDate{width:auto}
+                    .datagrid-cell-c26-periodOfValidity{width:auto}
+                    .datagrid-cell-c26-genericName{width:auto}
+                    .datagrid-cell-c26-searchKey{width:auto}
+                    .datagrid-cell-c26-productName{width:auto}
+                    .datagrid-cell-c26-dosageForm{width:auto}
+                    .datagrid-cell-c26-specification{width:auto}
+                    .datagrid-cell-c26-manufacturer{width:auto}
+                    .datagrid-cell-c26-vendor{width:auto}
+                    .datagrid-cell-c26-approvalNumber{width:auto}
+                    .datagrid-cell-c26-drugRang{width:auto}
+                    .datagrid-cell-c26-storageCondition{width:auto}
+                    .datagrid-cell-c26-drugCategory{width:auto}
+                    .datagrid-cell-c26-openStockString{width:auto}
+                    .datagrid-cell-c26-controlledDrugString{width:auto}
+                    .datagrid-cell-c26-chineseMedicineArea{width:auto}
+                </style></div><div class="datagrid-pager pagination"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td><select class="pagination-page-list"><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select></td><td><div class="pagination-btn-separator"></div></td><td><a href="javascript:void(0)" class="l-btn l-btn-small l-btn-plain l-btn-disabled l-btn-plain-disabled" group="" id=""><span class="l-btn-left l-btn-icon-left"><span class="l-btn-text l-btn-empty">&nbsp;</span><span class="l-btn-icon pagination-first">&nbsp;</span></span></a></td><td><a href="javascript:void(0)" class="l-btn l-btn-small l-btn-plain l-btn-disabled l-btn-plain-disabled" group="" id=""><span class="l-btn-left l-btn-icon-left"><span class="l-btn-text l-btn-empty">&nbsp;</span><span class="l-btn-icon pagination-prev">&nbsp;</span></span></a></td><td><div class="pagination-btn-separator"></div></td><td><span style="padding-left:6px;">第</span></td><td><input class="pagination-num" type="text" value="1" size="2"></td><td><span style="padding-right:6px;">共1页</span></td><td><div class="pagination-btn-separator"></div></td><td><a href="javascript:void(0)" class="l-btn l-btn-small l-btn-plain l-btn-disabled l-btn-plain-disabled" group="" id=""><span class="l-btn-left l-btn-icon-left"><span class="l-btn-text l-btn-empty">&nbsp;</span><span class="l-btn-icon pagination-next">&nbsp;</span></span></a></td><td><a href="javascript:void(0)" class="l-btn l-btn-small l-btn-plain l-btn-disabled l-btn-plain-disabled" group="" id=""><span class="l-btn-left l-btn-icon-left"><span class="l-btn-text l-btn-empty">&nbsp;</span><span class="l-btn-icon pagination-last">&nbsp;</span></span></a></td><td><div class="pagination-btn-separator"></div></td><td><a href="javascript:void(0)" class="l-btn l-btn-small l-btn-plain" group="" id=""><span class="l-btn-left l-btn-icon-left"><span class="l-btn-text l-btn-empty">&nbsp;</span><span class="l-btn-icon pagination-load">&nbsp;</span></span></a></td></tr></tbody></table><div class="pagination-info">显示0到0,共0记录</div><div style="clear:both;"></div></div></div></div>
+                <!-- 列表结束 -->
+            </div>
+        </div></div>
+        <!-- <div region="east" style="width:690px;" split="true" border="false" collapsed="true"></div> -->
+        <div class="layout-split-proxy-h"></div><div class="layout-split-proxy-v"></div></div>
+
+    <script type="text/javascript">
+
+        $('#dg').datagrid({
+            method:'get',
+            rownumbers: true,
+            pagination: true,
+            singleSelect:false,
+            toolbar: '#toolbar',
+            pageSize: 20
+        });
+
+        function rowformater(value,row,index){
+
+            var dataUrl = 'maintain/drugstorage/itemjson?id='+row.id;
+            var formUrl2 = 'maintain/drugstorage/print_form';
+            var edit2 = '<span title="打印" class="printColumn" onclick="editItem(event, {dataUrl:\''+dataUrl+'\', formUrl:\''+formUrl2+'\', callbackFun:showPrintFormValue, title:\'打印\', icon:\'wy-icon-print\'})" ></span>';
+
+            return edit2;
+        }
+
+        function isOutOfPeriodRowformater(value,row,index){
+
+            var str = '';
+            if(value){
+                str += '<span style="color:red">药品过期</span>';
+                if(row.checkLocked){
+                    str += '<span style="color:orange">（药品正在审核）</span>';
+                }
+            }else{
+                if(row.checkLocked){
+                    str += '<span style="color:orange">药品正在审核</span>';
+                }else{
+                    str += '<span style="color:green">正常</span>';
+                }
+            }
+
+            return str;
+        }
+
+        function showPrintFormValue(data){
+            showDrugTable(data);
+            showStorageTable(data);
+        }
+    </script></div></div></div>

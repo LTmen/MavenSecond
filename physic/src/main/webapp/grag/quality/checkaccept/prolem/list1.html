@@ -1,0 +1,64 @@
+
+
+
+<div id="ly" class="easyui-layout" fit="true" border="false">
+    <div region="center" title="数据列表" iconCls="wy-icon-table" border="false" >
+
+        <!-- 列表开始 -->
+        <table id="dg"  url="quality/problem/checking/listjson?type=DrugStorageCheckBySale" >
+            <thead>
+            <tr>
+                <th field="edit" formatter="rowformater" halign="center" align="center" >审核问题药品</th>
+                <th field="checkDiscription" halign="center">存在问题</th>
+                <th field="countLockSplitSpecificationsString" halign="center" align="right">问题数量</th>
+                <th field="checkMethod" halign="center">审核处理意见</th>
+                <th field="checkPerson" halign="center">报告人</th>
+                <th field="checkDate" halign="center">报告日期</th>
+                <th field="auditor" halign="center">审核人</th>
+                <th field="auditDate" halign="center">审核日期</th>
+            </tr>
+            </thead>
+        </table>
+        <!-- 列表结束 -->
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $('#dg').datagrid({
+        method:'get',
+        rownumbers: true,
+        pagination: true,
+        singleSelect:false,
+        toolbar: '#toolbar',
+        pageSize: 20
+    });
+
+    /* function rowformater(value,row,index){
+
+     var dataUrl = 'quality/problem/form/drugstorage_itemjson?checkId='+row.id;
+     var formUrl = 'quality/problem/form/drugstorage';
+     var edit = '<span title="查看库存记录" class="pillColumn" onclick="editItem(event, {dataUrl:\''+dataUrl+'\', formUrl:\''+formUrl+'\', callbackFun:showFormValue, title: \'库存记录\', icon: \'wy-icon-pill\'})" ></span>';
+     return edit;
+     } */
+
+    function rowformater(value,row,index){
+
+        var dataUrl = 'quality/problem/form/itemjson?id=' + row.id;
+        var formUrl = 'quality/problem/form/checkform';
+        var edit = '<span title="审核问题药品" class="checkColumn" onclick="editItem(event, {dataUrl:\''+dataUrl+'\', formUrl:\''+formUrl+'\', callbackFun:showFormValue, title:\'审核问题药品\', icon:\'wy-icon-check\'})" ></span>';
+
+        return edit;
+    }
+
+
+    function showFormValue(data){
+
+        $('#fm').form('load',data);
+        showDrugTable(data.drugStorage);
+        showStorageTable(data.drugStorage);
+    }
+
+</script>

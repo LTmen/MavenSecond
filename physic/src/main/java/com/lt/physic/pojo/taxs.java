@@ -1,5 +1,7 @@
 package com.lt.physic.pojo;
 
+import java.sql.Date;
+
 public class taxs {
 	private String sid=null;
 	private String snsrname=null;
@@ -10,7 +12,7 @@ public class taxs {
 	private String spzsljg=null;
 	private String skjyw=null;
 	private String sfzjg=null;
-	private String sfzrq=null;
+	private Date sfzrq=null;
 	private int jname ;
 	
 	public int getJname() {
@@ -73,10 +75,10 @@ public class taxs {
 	public void setSfzjg(String sfzjg) {
 		this.sfzjg = sfzjg;
 	}
-	public String getSfzrq() {
+	public Date getSfzrq() {
 		return sfzrq;
 	}
-	public void setSfzrq(String sfzrq) {
+	public void setSfzrq(Date sfzrq) {
 		this.sfzrq = sfzrq;
 	}
 	
