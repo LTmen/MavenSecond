@@ -1,7 +1,8 @@
 package com.lt.physic.servlet;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,89 +33,94 @@ public class SaveUserServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		String m =req.getParameter("m");
+		try {
+			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy"); 
 		
-		 basicinfoj basicinfoj = new basicinfoj();
-		 basicinfoj.setJid(req.getParameter("jid"));
-		 basicinfoj.setJnumber( req.getParameter("jnumber"));
-		 basicinfoj.setJdossier(req.getParameter("jdossier"));
-
-		 licensey licensey = new licensey(); 
-		 licensey.setYid(Integer.valueOf(req.getParameter("Yid")));
-		 licensey.setYname(req.getParameter("Yname"));
-		 licensey.setYaddress(req.getParameter("Yaddress"));
-		 licensey.setYfddbr(req.getParameter("Yfddbr"));
-		 licensey.setYqyfzr(req.getParameter("Yqyfzr"));
-		 licensey.setYzlzr(req.getParameter("Yzlzr"));
-		 licensey.setYckdz(req.getParameter("Yckdz"));
-		 licensey.setYtimeto(req.getParameter("Ytimeto"));
-		 licensey.setYjyfs(req.getParameter("Yjyfs"));
-		 licensey.setYfzjg(req.getParameter("Yfzjg"));
-		 licensey.setYtimestart(req.getParameter("Ytimestart"));
-		
-		 accountk accountk = new accountk();
-		 accountk.setKback(req.getParameter("Kback"));
-		 accountk.setKid(req.getParameter("Kid"));
-		 accountk.setKname(req.getParameter("Kname"));
-	
-		 gspg gspg = new gspg();
-		 gspg.setGdz(req.getParameter("Gdz"));
-		 gspg.setGfzjg(req.getParameter("Gfzjg"));
-		 gspg.setGid(Integer.valueOf(req.getParameter("Gid")));
-		 gspg.setGname(req.getParameter("Gname"));
-		 gspg.setGrzfw(req.getParameter("Grzfw"));
-		 gspg.setGtimeto(Date.valueOf(req.getParameter("Gtimeto")));
-		 gspg.setGtimestart(Date.valueOf(req.getParameter("Gtime")));
-		 
-		 organizationz organizationz = new organizationz();
-		 organizationz.setZaddress(req.getParameter("Zaddress"));
-		 organizationz.setZbadw(req.getParameter("Zbadw"));
-		 organizationz.setZcode(req.getParameter("Zcode"));
-		 organizationz.setZid(req.getParameter("Zid"));
-		 organizationz.setZname(req.getParameter("Zname"));
-		 organizationz.setZtimestart(req.getParameter("Ztimestart"));
-		 organizationz.setZtimeto(req.getParameter("Ztimeto"));
-		 organizationz.setZtype(req.getParameter("Ztype"));
-		 
-		 taxs taxs = new taxs();
-		 taxs.setSdjzclx(req.getParameter("Sdjzclx"));
-		 taxs.setSdz(req.getParameter("Sdz"));
-		 taxs.setSfddbr(req.getParameter("Sfddbr"));
-		 taxs.setSfzjg(req.getParameter("Sfzjg"));
-		 taxs.setSfzrq(Date.valueOf(req.getParameter("Sfzrq")));
-		 taxs.setSid(req.getParameter("Sid"));
-		 taxs.setSjyfw(req.getParameter("Sjyfw"));
-		 taxs.setSkjyw(req.getParameter("Skjyw"));
-		 taxs.setSnsrname(req.getParameter("Snsrname"));
-		 taxs.setSpzsljg(req.getParameter("Spzsljg"));
-		 							
-		 ylicensejj ylicensejj = new ylicensejj();
-		 ylicensejj.setJjfazj(req.getParameter("Jjfazj"));
-		 ylicensejj.setJjfddbrxm(req.getParameter("Jjfddbrxm"));
-		 ylicensejj.setJjgslx(req.getParameter("Jjgslx"));
-		 ylicensejj.setJjid(req.getParameter("Jjid"));
-		 ylicensejj.setJjjyfw(req.getParameter("Jjjyfw"));
-		 ylicensejj.setJjname(req.getParameter("Jjname"));
-		 ylicensejj.setJjssb(Double.valueOf(req.getParameter("Jjssb")));
-		 ylicensejj.setJjtimefound(req.getParameter("Jjtimefound"));
-		 ylicensejj.setJjtimeset(req.getParameter("Jjtimeset"));
-		 ylicensejj.setJjtimestar(req.getParameter("Jjtimestar"));
-		 ylicensejj.setJjtimeto(req.getParameter("Jtimeto"));
-		 ylicensejj.setJjzczb(Double.valueOf(req.getParameter("Jjzczb")));
-		 ylicensejj.setJjzs(req.getParameter(req.getParameter("Jjzs")));
-		 
-		 
-		basicinfojDAOimpl ba = new basicinfojDAOimpl();
-	
-		if(m.equals("save")){
-			ba.save(basicinfoj,licensey,accountk,gspg,organizationz,taxs,ylicensejj);
-		}else if(m.equals("edit")){
+			String m =req.getParameter("m");
 			
-//			sql="update users set fristname='"+fristname+"',lastname ='"+lastname+"',phone ='"+phone+"',eamil = '"+email+"' where id='"+id+"'";
-//		}else if(m.equals("remove")){
-//			sql = "delete FROM users WHERE id='"+id+"'";
-		}
+			 basicinfoj basicinfoj = new basicinfoj();
+			 basicinfoj.setJid(req.getParameter("name"));
+			 basicinfoj.setJnumber( req.getParameter("serchKey"));
+			 basicinfoj.setJdossier(req.getParameter("fileNumber"));
+	
+			 licensey licensey = new licensey(); 
+			 licensey.setYid(Integer.valueOf(req.getParameter("infoLicenseForTrading.licenceNumber")));
+			 licensey.setYname(req.getParameter("infoLicenseForTrading.enterpriseName"));
+			 licensey.setYaddress(req.getParameter("infoLicenseForTrading.registerAddress"));
+			 licensey.setYfddbr(req.getParameter("infoLicenseForTrading.legalPerson"));
+			 licensey.setYqyfzr(req.getParameter("infoLicenseForTrading.enterpriseManager"));
+			 licensey.setYzlzr(req.getParameter("infoLicenseForTrading.qualityManager"));
+			 licensey.setYckdz(req.getParameter("infoLicenseForTrading.warehouseAddress"));
+			 licensey.setYtimeto(df.parse(req.getParameter("infoLicenseForTrading.validityDate")));
+			 licensey.setYjyfs(req.getParameter("infoLicenseForTrading.businessPractice"));
+			 licensey.setYjyfw(new String(req.getParameter("infoLicenseForTrading.businessScope").getBytes("iso-8859-1"), "UTF-8"));
+			 licensey.setYfzjg(req.getParameter("infoLicenseForTrading.certificateDept"));
+			 licensey.setYtimestart(df.parse(req.getParameter("infoLicenseForTrading.certificateDate")));
+			
+			 accountk accountk = new accountk();
+			 accountk.setKback(req.getParameter("infoAccount.accountName"));
+			 accountk.setKid(req.getParameter("infoAccount.accountBank"));
+			 accountk.setKname(req.getParameter("infoAccount.account"));
 		
+			 gspg gspg = new gspg();
+			 gspg.setGdz(req.getParameter("infoGsp.enterpriseAddress"));
+			 gspg.setGfzjg(req.getParameter("infoGsp.certificateDept"));
+			 gspg.setGid(Integer.parseInt(req.getParameter("infoGsp.certificateNumber")));
+			 gspg.setGname(req.getParameter("infoGsp.enterpriseName"));
+			 gspg.setGrzfw(req.getParameter("infoGsp.certificateScope"));
+			 gspg.setGtimestart(df.parse(req.getParameter("infoGsp.certificateDate")));
+			 gspg.setGtimeto(df.parse(req.getParameter("infoGsp.validityDate")));
+			 
+			 organizationz organizationz = new organizationz();
+			 organizationz.setZaddress(req.getParameter("infoOrganizationCode.address"));
+			 organizationz.setZbadw(req.getParameter("infoOrganizationCode.certificateDept"));
+			 organizationz.setZcode(req.getParameter("infoOrganizationCode.code"));
+			 organizationz.setZid(req.getParameter("infoOrganizationCode.registerNumber"));
+			 organizationz.setZname(req.getParameter("infoOrganizationCode.name"));
+			 organizationz.setZtimestart(df.parse(req.getParameter("infoOrganizationCode.validityTimeFrom")));
+			 organizationz.setZtimeto(df.parse(req.getParameter("infoOrganizationCode.validityTimeTo")));
+			 organizationz.setZtype(req.getParameter("infoOrganizationCode.type"));
+			 
+			 taxs taxs = new taxs();
+			 taxs.setSdjzclx(req.getParameter("infoTax.registerType"));
+			 taxs.setSdz(req.getParameter("infoTax.address"));
+			 taxs.setSfddbr(req.getParameter("infoTax.legalPerson"));
+			 taxs.setSfzjg(req.getParameter("infoTax.certificateDept"));
+			 taxs.setSfzrq(df.parse(req.getParameter("infoTax.certificateDate")));
+			 taxs.setSid(req.getParameter("infoTax.number"));
+			 taxs.setSjyfw(req.getParameter("infoTax.businessScope"));
+			 taxs.setSkjyw(req.getParameter("infoTax.withholdings"));
+			 taxs.setSnsrname(req.getParameter("infoTax.name"));
+			 taxs.setSpzsljg(req.getParameter("infoTax.authorizeDept"));
+			 							
+			 ylicensejj ylicensejj = new ylicensejj();
+			 ylicensejj.setJjfazj(req.getParameter("infoLicenseForBusiness.certificateDept"));
+			 ylicensejj.setJjfddbrxm(req.getParameter("infoLicenseForBusiness.legalPersonName"));
+			 ylicensejj.setJjgslx(req.getParameter("infoLicenseForBusiness.companyType"));
+			 ylicensejj.setJjid(req.getParameter("infoLicenseForBusiness.registerNumber"));
+			 ylicensejj.setJjjyfw(req.getParameter("infoLicenseForBusiness.scope"));
+			 ylicensejj.setJjname(req.getParameter("infoLicenseForBusiness.name"));
+			 ylicensejj.setJjssb(Double.valueOf(req.getParameter("infoLicenseForBusiness.actualPrincipal")));
+			 ylicensejj.setJjtimefound(df.parse(req.getParameter("infoLicenseForBusiness.dateOfEstablishment")));
+			 ylicensejj.setJjtimeset(df.parse(req.getParameter("infoLicenseForBusiness.certificateDate")));
+			 ylicensejj.setJjtimestar(df.parse(req.getParameter("infoLicenseForBusiness.allotedTimeFrom")));
+			 ylicensejj.setJjtimeto(df.parse(req.getParameter("infoLicenseForBusiness.allotedTimeTo")));
+			 ylicensejj.setJjzczb(Double.valueOf(req.getParameter("infoLicenseForBusiness.registerPrincipal")));
+			 ylicensejj.setJjzs(req.getParameter("infoLicenseForBusiness.domicile"));
+			 
+		
+			basicinfojDAOimpl ba = new basicinfojDAOimpl();
+			if(m.equals("save")){
+				ba.save(basicinfoj,licensey,accountk,gspg,organizationz,taxs,ylicensejj);
+			}else if(m.equals("edit")){
+				
+	//			sql="update users set fristname='"+fristname+"',lastname ='"+lastname+"',phone ='"+phone+"',eamil = '"+email+"' where id='"+id+"'";
+	//		}else if(m.equals("remove")){
+	//			sql = "delete FROM users WHERE id='"+id+"'";
+			}
+		} catch (ParseException e) {
+				e.printStackTrace();
+		}
 
 	}
 }

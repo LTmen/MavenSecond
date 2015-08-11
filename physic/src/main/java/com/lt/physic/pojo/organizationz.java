@@ -1,22 +1,17 @@
 package com.lt.physic.pojo;
 
+import java.util.Date;
+
 public class organizationz {
 	private String zcode=null;
 	private String zname=null;
 	private String ztype=null;
 	private String zaddress=null;
-	private String ztimestart=null;
-	private String ztimeto=null;
+	private Date ztimestart=null;
+	private Date ztimeto=null;
 	private String zbadw=null;
 	private String zid=null;
 	private int jname ;
-	
-	public int getJname() {
-		return jname;
-	}
-	public void setJname(int jname) {
-		this.jname = jname;
-	}
 	public String getZcode() {
 		return zcode;
 	}
@@ -41,16 +36,16 @@ public class organizationz {
 	public void setZaddress(String zaddress) {
 		this.zaddress = zaddress;
 	}
-	public String getZtimestart() {
+	public Date getZtimestart() {
 		return ztimestart;
 	}
-	public void setZtimestart(String ztimestart) {
+	public void setZtimestart(Date ztimestart) {
 		this.ztimestart = ztimestart;
 	}
-	public String getZtimeto() {
+	public Date getZtimeto() {
 		return ztimeto;
 	}
-	public void setZtimeto(String ztimeto) {
+	public void setZtimeto(Date ztimeto) {
 		this.ztimeto = ztimeto;
 	}
 	public String getZbadw() {
@@ -65,6 +60,12 @@ public class organizationz {
 	public void setZid(String zid) {
 		this.zid = zid;
 	}
-	
+	public int getJname() {
+		return jname;
+	}
+	public void setJname(int jname) {
+		this.jname = jname;
+	}
+		
 	
 }

@@ -1,6 +1,6 @@
 package com.lt.physic.pojo;
 
-import java.text.DecimalFormat;
+import java.util.Date;
 
 public class ylicensejj {
 	private String jjid=null;
@@ -11,19 +11,12 @@ public class ylicensejj {
 	private double jjssb;
 	private String jjgslx=null;
 	private String jjjyfw=null;
-	private String jjtimefound=null;
-	private String jjtimestar=null;
-	private String jjtimeto=null;
+	private Date jjtimefound=null;
+	private Date jjtimestar=null;
+	private Date jjtimeto=null;
 	private String jjfazj=null;
-	private String jjtimeset=null;
+	private Date jjtimeset=null;
 	private int jname ;
-	
-	public int getJname() {
-		return jname;
-	}
-	public void setJname(int jname) {
-		this.jname = jname;
-	}
 	public String getJjid() {
 		return jjid;
 	}
@@ -72,22 +65,22 @@ public class ylicensejj {
 	public void setJjjyfw(String jjjyfw) {
 		this.jjjyfw = jjjyfw;
 	}
-	public String getJjtimefound() {
+	public Date getJjtimefound() {
 		return jjtimefound;
 	}
-	public void setJjtimefound(String jjtimefound) {
+	public void setJjtimefound(Date jjtimefound) {
 		this.jjtimefound = jjtimefound;
 	}
-	public String getJjtimestar() {
+	public Date getJjtimestar() {
 		return jjtimestar;
 	}
-	public void setJjtimestar(String jjtimestar) {
+	public void setJjtimestar(Date jjtimestar) {
 		this.jjtimestar = jjtimestar;
 	}
-	public String getJjtimeto() {
+	public Date getJjtimeto() {
 		return jjtimeto;
 	}
-	public void setJjtimeto(String jjtimeto) {
+	public void setJjtimeto(Date jjtimeto) {
 		this.jjtimeto = jjtimeto;
 	}
 	public String getJjfazj() {
@@ -96,12 +89,19 @@ public class ylicensejj {
 	public void setJjfazj(String jjfazj) {
 		this.jjfazj = jjfazj;
 	}
-	public String getJjtimeset() {
+	public Date getJjtimeset() {
 		return jjtimeset;
 	}
-	public void setJjtimeset(String jjtimeset) {
+	public void setJjtimeset(Date jjtimeset) {
 		this.jjtimeset = jjtimeset;
 	}
+	public int getJname() {
+		return jname;
+	}
+	public void setJname(int jname) {
+		this.jname = jname;
+	}
+
 	
 	
 }

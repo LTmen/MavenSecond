@@ -1,5 +1,7 @@
 package com.lt.physic.pojo;
 
+import java.util.Date;
+
 public class licensey {
 	private int yid ;
 	private String yname=null;
@@ -8,12 +10,19 @@ public class licensey {
 	private String yqyfzr=null;
 	private String yzlzr=null;
 	private String yckdz=null;
-	private String ytimeto=null;
+	private Date ytimeto=null;
 	private String yjyfs=null;
 	private String yfzjg=null;
-	private String ytimestart=null;
+	private Date ytimestart=null;
+	private String yjyfw = null;
 	private int jname ;
 	
+	public String getYjyfw() {
+		return yjyfw;
+	}
+	public void setYjyfw(String yjyfw) {
+		this.yjyfw = yjyfw;
+	}
 	public int getJname() {
 		return jname;
 	}
@@ -62,10 +71,10 @@ public class licensey {
 	public void setYckdz(String yckdz) {
 		this.yckdz = yckdz;
 	}
-	public String getYtimeto() {
+	public Date getYtimeto() {
 		return ytimeto;
 	}
-	public void setYtimeto(String ytimeto) {
+	public void setYtimeto(Date ytimeto) {
 		this.ytimeto = ytimeto;
 	}
 	public String getYjyfs() {
@@ -80,10 +89,10 @@ public class licensey {
 	public void setYfzjg(String yfzjg) {
 		this.yfzjg = yfzjg;
 	}
-	public String getYtimestart() {
+	public Date getYtimestart() {
 		return ytimestart;
 	}
-	public void setYtimestart(String ytimestart) {
+	public void setYtimestart(Date ytimestart) {
 		this.ytimestart = ytimestart;
 	}
 	

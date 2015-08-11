@@ -1,6 +1,8 @@
 package com.lt.physic.pojo;
 
-import java.sql.Date;
+import java.util.Date;
+
+
 
 public class taxs {
 	private String sid=null;
@@ -11,7 +13,7 @@ public class taxs {
 	private String sjyfw=null;
 	private String spzsljg=null;
 	private String skjyw=null;
-	private String sfzjg=null;
+	private String sfzjg = null;
 	private Date sfzrq=null;
 	private int jname ;
 	

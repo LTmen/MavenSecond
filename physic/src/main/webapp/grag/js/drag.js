@@ -91,7 +91,7 @@ function cancelItem(){
 function saveItem(thisform){
 
     thisform.form('submit',{
-    	url:"../save_user.php",
+    	url:"../save_user.php?m=save",
         onSubmit: function(){
 
             if(!$(this).form('validate')){
