@@ -139,11 +139,12 @@ function destroyItems(url){
                 var idstr = '?';
                 for(var i = 0; i < rows.length; i++){
                     var row = rows[i];
-                    idstr += 'id=' + row.id + '&';
+                    idstr += 'jname=' + row.jname + '&';
                 }
-                idstr = idstr.substring(0, idstr.length-1);
-
+                idstr +='m=delete';
+                console.log(url+idstr);
                 $.post(url + idstr,function(result){
+                	console.log(result);
                     if (result.msg == "success"){
                         $('#dg').datagrid('reload'); // reload the user data
                         showMsg(result.txt);

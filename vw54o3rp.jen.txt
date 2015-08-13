@@ -1,0 +1,26 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   physic/.settings/org.eclipse.core.resources.prefs
+#	modified:   physic/pom.xml
+#	modified:   physic/src/main/java/com/lt/physic/dao/basicinfojDAOimpl.java
+#	new file:   physic/src/main/java/com/lt/physic/pojo/bDAOimpl.java
+#	modified:   physic/src/main/java/com/lt/physic/servlet/SaveUserServlet.java
+#	modified:   physic/src/main/webapp/grag/js/drag.js
+#	modified:   physic/src/main/webapp/grag/quality/vendor/agent/list.html
+#	new file:   physic/src/test/java/test/com/physic/dao/basicinfojDAO/basicinfojDAO.java
+#	modified:   physic/target/classes/com/lt/physic/dao/basicinfojDAOimpl.class
+#	new file:   physic/target/classes/com/lt/physic/pojo/bDAOimpl.class
+#	modified:   physic/target/classes/com/lt/physic/servlet/SaveUserServlet.class
+#	modified:   physic/target/m2e-wtp/web-resources/META-INF/maven/com.li/physic/pom.properties
+#	modified:   physic/target/m2e-wtp/web-resources/META-INF/maven/com.li/physic/pom.xml
+#	new file:   physic/target/test-classes/test/com/physic/dao/basicinfojDAO/basicinfojDAO.class
+#
+# Changes not staged for commit:
+#	deleted:    MavenSecond
+#
+

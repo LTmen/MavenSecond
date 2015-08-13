@@ -3,13 +3,12 @@
 
 <div id="toolbar">
     <a id="newItemBtn" onclick="newItem({formUrl:'quality/vendor/agent/form.html',callbackFun:initFormValue});" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" >增加供货单位</a>
-    <a id="deleteItemsBtn" onclick="destroyItems('quality/vendor/agent/deleteitems');" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" >删除供货单位</a>
+    <a id="deleteItemsBtn" onclick="destroyItems('../save_user.php');" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" >删除供货单位</a>
 </div>
 
 <div id="ly" class="easyui-layout" fit="true" border="false">
     <div region="center" title="数据列表" iconCls="wy-icon-table" border="false" >
          <div class="wy-centerbox">
-
         <table id="dg" url="../get_users.php" >
             <thead>
             <tr>

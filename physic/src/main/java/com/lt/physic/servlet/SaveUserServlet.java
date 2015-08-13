@@ -1,13 +1,21 @@
 package com.lt.physic.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+
+
+
 
 import com.lt.physic.dao.basicinfojDAOimpl;
 import com.lt.physic.pojo.accountk;
@@ -17,32 +25,37 @@ import com.lt.physic.pojo.licensey;
 import com.lt.physic.pojo.organizationz;
 import com.lt.physic.pojo.taxs;
 import com.lt.physic.pojo.ylicensejj;
+import com.lt.physic.util.JsonUtil;
 
 
 
 public class SaveUserServlet extends HttpServlet {
-
+	
+	basicinfoj basicinfoj = new basicinfoj();
+	basicinfojDAOimpl ba = new basicinfojDAOimpl();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		basicinfoj.setJname(Integer.valueOf(req.getParameter("jname")));
 		
-		System.out.println("doGet");
+		String jsonStr = JsonUtil.toJson(ba.delete(basicinfoj));
+		PrintWriter out = resp.getWriter();
+		out.print(jsonStr);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		try {
-			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy"); 
-		
-			String m =req.getParameter("m");
-			
-			 basicinfoj basicinfoj = new basicinfoj();
-			 basicinfoj.setJid(req.getParameter("name"));
-			 basicinfoj.setJnumber( req.getParameter("serchKey"));
-			 basicinfoj.setJdossier(req.getParameter("fileNumber"));
-	
+			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");//格式化来自前端的时间类型 
+			String m =req.getParameter("m");//标记DML
+			basicinfoj.setJid(req.getParameter("name"));
+			basicinfoj.setJnumber( req.getParameter("serchKey"));
+			basicinfoj.setJdossier(req.getParameter("fileNumber"));
+			if(m.equals("delete")){
+					doGet(req,resp);
+			}else{
 			 licensey licensey = new licensey(); 
 			 licensey.setYid(Integer.valueOf(req.getParameter("infoLicenseForTrading.licenceNumber")));
 			 licensey.setYname(req.getParameter("infoLicenseForTrading.enterpriseName"));
@@ -107,20 +120,18 @@ public class SaveUserServlet extends HttpServlet {
 			 ylicensejj.setJjtimeto(df.parse(req.getParameter("infoLicenseForBusiness.allotedTimeTo")));
 			 ylicensejj.setJjzczb(Double.valueOf(req.getParameter("infoLicenseForBusiness.registerPrincipal")));
 			 ylicensejj.setJjzs(req.getParameter("infoLicenseForBusiness.domicile"));
+					 
+			 if(m.equals("save")){
+					ba.save(basicinfoj,licensey,accountk,gspg,organizationz,taxs,ylicensejj);
+			 }else if(m.equals("edit")){
+		//			sql="update users set fristname='"+fristname+"',lastname ='"+lastname+"',phone ='"+phone+"',eamil = '"+email+"' where id='"+id+"'";				}
+			 }	
 			 
-		
-			basicinfojDAOimpl ba = new basicinfojDAOimpl();
-			if(m.equals("save")){
-				ba.save(basicinfoj,licensey,accountk,gspg,organizationz,taxs,ylicensejj);
-			}else if(m.equals("edit")){
-				
-	//			sql="update users set fristname='"+fristname+"',lastname ='"+lastname+"',phone ='"+phone+"',eamil = '"+email+"' where id='"+id+"'";
-	//		}else if(m.equals("remove")){
-	//			sql = "delete FROM users WHERE id='"+id+"'";
 			}
 		} catch (ParseException e) {
 				e.printStackTrace();
 		}
 
 	}
+	
 }
