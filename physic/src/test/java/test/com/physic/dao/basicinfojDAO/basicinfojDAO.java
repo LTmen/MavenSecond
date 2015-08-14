@@ -3,6 +3,9 @@ package test.com.physic.dao.basicinfojDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+
+import java.util.Scanner;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,11 +35,13 @@ public class basicinfojDAO {
 	@Test
 	public void testSave(){
 		try {
+		//Scanner sc = new Scanner(System.in);
 		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 		basicinfoj basicinfoj = new basicinfoj();
-		basicinfoj.setJid("name");
+		basicinfoj.setJid("nameba");
 		basicinfoj.setJnumber( "serchKey");
 		basicinfoj.setJdossier("fileNumber");
+	//basicinfoj.setJname(sc.nextInt());
 
 		 licensey licensey = new licensey(); 
 		 licensey.setYid(1);
@@ -73,22 +78,22 @@ public class basicinfojDAO {
 		 organizationz.setZbadw("certificateDept");
 		 organizationz.setZcode("code");
 		 organizationz.setZid("registerNumber");
-		 organizationz.setZname("name");
+		 organizationz.setZname("namezao");
 		 organizationz.setZtimestart(df.parse("08/20/2015"));
 		 organizationz.setZtimeto(df.parse("08/20/2015"));
 		 organizationz.setZtype("type");
 		 
 		 taxs taxs = new taxs();
-		 taxs.setSdjzclx("infoTax.registerType");
-		 taxs.setSdz("infoTax.address");
-		 taxs.setSfddbr("infoTax.legalPerson");
-		 taxs.setSfzjg("infoTax.certificateDept");
+		 taxs.setSdjzclx("registerType");
+		 taxs.setSdz("address");
+		 taxs.setSfddbr("legalPerson");
+		 taxs.setSfzjg("certificateDept");
 		 taxs.setSfzrq(df.parse("08/20/2015"));
-		 taxs.setSid("infoTax.number");
-		 taxs.setSjyfw("infoTax.businessScope");
-		 taxs.setSkjyw("infoTax.withholdings");
-		 taxs.setSnsrname("infoTax.name");
-		 taxs.setSpzsljg("infoTax.authorizeDept");
+		 taxs.setSid("number");
+		 taxs.setSjyfw("businessScope");
+		 taxs.setSkjyw("withholdings");
+		 taxs.setSnsrname("nametax");
+		 taxs.setSpzsljg("authorizeDept");
 		 							
 		 ylicensejj ylicensejj = new ylicensejj();
 		 ylicensejj.setJjfazj("certificateDept");
@@ -96,17 +101,16 @@ public class basicinfojDAO {
 		 ylicensejj.setJjgslx("companyType");
 		 ylicensejj.setJjid("registerNumber");
 		 ylicensejj.setJjjyfw("scope");
-		 ylicensejj.setJjname("name");
-		 ylicensejj.setJjssb(Double.valueOf("actualPrincipal"));
+		 ylicensejj.setJjname("nameulic");
+		 ylicensejj.setJjssb(Double.valueOf("11.00"));
 		 ylicensejj.setJjtimefound(df.parse("08/20/2015"));
 		 ylicensejj.setJjtimeset(df.parse("08/20/2015"));
 		 ylicensejj.setJjtimestar(df.parse("08/20/2015"));
 		 ylicensejj.setJjtimeto(df.parse("08/20/2015"));
-		 ylicensejj.setJjzczb(Double.valueOf("registerPrincipal"));
+		 ylicensejj.setJjzczb(Double.valueOf("11.00"));
 		 ylicensejj.setJjzs("domicile");
-				 
+		bDao.save(basicinfoj,licensey,accountk,gspg,organizationz,taxs,ylicensejj);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
